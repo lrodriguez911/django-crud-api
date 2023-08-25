@@ -4,8 +4,8 @@ import { getAllTask } from "../api/tasks.api"
 export function TasksList() {
 
     useEffect(() => {
-        function loadTasks() {
-            const res = getAllTask()
+        async function loadTasks() {
+            const res = await getAllTask()
             console.log(res);
         }
         loadTasks();

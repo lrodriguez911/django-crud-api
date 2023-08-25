@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { TaskFormPage } from './pages/TaskFormPage'
-import { TaskPage } from './pages/TaskPage'
+import { TasksPage } from './pages/TasksPage'
 import { Navigation } from './components/Navigation'
 
 
@@ -12,7 +12,7 @@ function App() {
     <Navigation />
       <Routes>
         <Route path="/" element={<Navigate to="/tasks" />} />
-        <Route path="/tasks" element={<TaskPage />} />
+        <Route path="/tasks" element={<TasksPage />} />
         <Route path="/tasks-create" element={<TaskFormPage />} />
       </Routes>
     </BrowserRouter>
