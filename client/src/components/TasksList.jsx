@@ -1,11 +1,11 @@
 import { useEffect } from "react"
-import { getAllTask } from "../api/tasks.api"
+import { getAllTasks } from "../api/tasks.api"
 
 export function TasksList() {
 
     useEffect(() => {
         async function loadTasks() {
-            const res = await getAllTask()
+            const res = await getAllTasks()
             console.log(res);
         }
         loadTasks();
