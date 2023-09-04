@@ -44,13 +44,14 @@ export function TaskFormPage() {
   }, [])
 
   return (
-    <div>
+    <div className="max-w-xl mx-auto">
       <form onSubmit={onSubmit()}>
         <input
           type="text"
           name="title"
           id="title"
           placeholder="Title"
+          className="bg-zinc-700 p-3 rounded-lg block w-full mb-3"
           {...register("title", { required: true })}
         />
         {errors.title && <p>Title is required</p>}
@@ -60,13 +61,16 @@ export function TaskFormPage() {
           cols="30"
           rows="10"
           placeholder="Description"
+          className="bg-zinc-700 p-3 rounded-lg block w-full mb-3"
           {...register("description", { required: true })}
         ></textarea>
         {errors.description && <p>Description is required</p>}
-        <button>Save</button>
+        <button className="bg-indigo-500 p-3 rounded-lg text-white block w-full mt-3" value="Save Task">Save</button>
       </form>
       {params.id && (
-        <button
+        <div className="flex justify-end">
+          <button
+        className="bg-red-500 p-3 rounded-lg w-48 mt-3"
           onClick={async () => {
             const accepted = window.confirm("Are you sure?");
             if (accepted) {
@@ -81,6 +85,7 @@ export function TaskFormPage() {
         >
           Delete
         </button>
+        </div>
       )}
     </div>
   );
